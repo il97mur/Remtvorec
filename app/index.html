@@ -15,6 +15,7 @@
 	
 
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="https://cdn.rawgit.com/mfd/09b70eb47474836f25a21660282ce0fd/raw/e06a670afcb2b861ed2ac4a1ef752d062ef6b46b/Gilroy.css">
 	<link rel="stylesheet" href="css/styles.min.css">
 
 </head>
@@ -83,11 +84,100 @@
 		<section class="calculate">
 			<div class="container calculate__container">
 				<div class="h1 calculate__h1">Узнайте стоимость работ для вашего помещения <span class="bold">за 8 секунд с помощью калькулятора</span></div>
-				<p class="calculate__text">Укажите сведения об объекте и выберите тип ремонта, чтобы моментально получить предварительный расчет с привлекательной ценой.</p>
-				<div id="slider">
-					<div id="custom-handle" class="ui-slider-handle"></div>
-				  </div>
+				<div class="calculate__container_tight">
+					<p class="calculate__text">Укажите сведения об объекте и выберите тип ремонта, чтобы моментально получить предварительный расчет с привлекательной ценой.</p>
+					<div class="c-area-slider">
+					<p class="area-slider-min area-slider__count">20 м2</p>
+						<div id="slider" class="j-slider area-slider" >
+							<div id="custom-handle" class="ui-slider-handle"></div>
+						</div>
+					<p class="area-slider-max area-slider__count">200 м2</p>
+				</div>
+
+				</div>
 			</div>
+
+
+			<div class="black-wrap">
+				<div class="container calculate__container">
+					<div class="row calculate__row type-of-house">
+						<div class="type-of-house__item type-of-house__item_active">
+							<div class="type-of-house__content">
+								<p class="type-of-house__name">Новостройка</p>
+								<div class="type-of-house__price">
+									От <span class="bolc">6 600</span> р/м2
+								</div>
+							</div>
+						</div>
+						<div class="type-of-house__item">
+							<div class="type-of-house__content">
+								<p class="type-of-house__name">Вторичное жилье</p>
+								<div class="type-of-house__price">
+									От <span class="bolc">6 600</span> р/м2
+								</div>
+							</div>
+						</div>
+						<div class="type-of-house__item">
+							<div class="type-of-house__content">
+								<p class="type-of-house__name">Дом</p>
+								<div class="type-of-house__price">
+									От <span class="bolc">6 600</span> р/м2
+								</div>
+							</div>
+						</div>
+						<div class="type-of-house__item">
+							<div class="type-of-house__content">
+								<p class="type-of-house__name">Таунхауз</p>
+								<div class="type-of-house__price">
+									От <span class="bolc">6 600</span> р/м2
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="card valuation__card valuation">
+						<div class="valuation__column">
+							<div class="row type-of-repair">
+								<div class="type-of-repair__item type-of-repair__item_active j-cosmetic">
+									<p class="type-of-repair__name type-of-repair__name_active">Косметический</p>
+									<p class="type-of-repair__price">От <span class="bold type-of-repair__bold">6 600</span> р/м2</p>
+								</div>
+								<div class="type-of-repair__item j-capital">
+									<p class="type-of-repair__name">Капитальный</p>
+									<p class="type-of-repair__price">От <span class="bold type-of-repair__bold">6 600</span> р/м2</p>
+								</div>
+								<div class="type-of-repair__item j-elite">
+									<p class="type-of-repair__name">Элитный</p>
+									<p class="type-of-repair__price">От <span class="bold type-of-repair__bold">6 600</span> р/м2</p>
+								</div>
+							</div>
+
+							<div class="row type-of-repair__text type-of-repair__text_visible j-content j-cosmetic-content">
+								Косметический ремонт позволит обновить интерьер, добавить свежие "нотки", сделать дом более современным. Его проводят каждые 5-7 лет: убирают старые обои, испорченную плитку, линолеум или ламинат, меняют неисправную сантехнику, если это требуется, устанавливают/наносят новые покрытия. Косметическая отделка занимает несколько дней.
+							</div>
+
+							<div class="row type-of-repair__text j-content j-capital-content">
+								CAPITAL Косметический ремонт позволит обновить интерьер, добавить свежие "нотки", сделать дом более современным. Его проводят каждые 5-7 лет: убирают старые обои, испорченную плитку, линолеум или ламинат, меняют неисправную сантехнику, если это требуется, устанавливают/наносят новые покрытия. Косметическая отделка занимает несколько дней.
+							</div>
+
+							<div class="row type-of-repair__text j-content j-elite-content">
+								ELITE Косметический ремонт позволит обновить интерьер, добавить свежие "нотки", сделать дом более современным. Его проводят каждые 5-7 лет: убирают старые обои, испорченную плитку, линолеум или ламинат, меняют неисправную сантехнику, если это требуется, устанавливают/наносят новые покрытия. Косметическая отделка занимает несколько дней.
+							</div>
+
+							<button class="button valuation__button">Подробнее</button>
+						</div>
+						<div class="valuation__column">
+							<p class="valuation__heading">Предварительный расчет</p>
+							<p class="valuation-part__price valuation-repair__price">Цена за услуги ремонта: <span class="bold valuation-repair__value valuation-repair__price-value"> 25 000р</span></p> 
+							<p class="valuation-part__price valuation-repair__price">Цена за материалы: <span class="bold valuation-repair__value valuation-repair__price-value"> 25 000р</span></p> 
+							<p class="valuation__result"><span class="bold">Итого: </span> <span class="valuation__result-value"> 40 000р</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+
 			
 			
 		</section>

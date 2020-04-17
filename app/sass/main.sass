@@ -67,6 +67,8 @@ body, html
 	display: none !important
 .w-50
 	width: 50%
+.w-100
+	width: 100%
 
 // End standart classes
 
@@ -377,8 +379,8 @@ h1,h2
 	padding: 100px 0px 70px 0px
 	display: flex
 	justify-content: center
-	z-index: 5
 	position: relative
+	flex-wrap: wrap
 	&__h1
 		line-height: 70px
 		text-align: center
@@ -389,10 +391,47 @@ h1,h2
 		opacity: 0.67
 		text-align: center
 		color: #ffffff
-		margin-bottom: 100px
+		margin-bottom: 110px
+	&__container
+		display: flex
+		justify-content: center
+		flex-wrap: wrap
+		&_tight
+			width: 83.3333%
+			display: flex
+			justify-content: center
+			flex-wrap: wrap
+	&__row
+		display: flex
+		justify-content: space-between
+
+.black-wrap
+	background: linear-gradient(180deg, #17120B, #000000)
+	width: 100%
+	display: flex
+	justify-content: center
+	flex-wrap: wrap
+	padding-bottom: 200px
+
+.c-area-slider
+	display: flex
+	justify-content: space-between
+	width: 90%
+
+.area-slider
+	margin-bottom: 90px
+	width: 80%
+	&__count
+		font-size: 20px
+		font-weight: 400
+		opacity: 0.5
+		color: #ffffff
+
+// Стилизация ползунка
 
 .ui-widget
 	border: none !important
+	font-family: 'Montserrat', sans-serif
 
 .ui-widget-header
 	background: $green
@@ -426,3 +465,148 @@ h1,h2
 
 .ui-state-default
 	background: #ffffff
+
+// Конец стилизации ползунка
+
+.type-of-house
+	padding-bottom: 45px
+	&__item
+		display: flex
+		align-items: flex-end
+		flex-wrap: wrap
+		flex: 0 0 23%
+		height: 335px
+		padding: 0px 30px 20px
+		background-image: url('../img/_src/new-building.png')
+		background-position: 0px 30px
+		background-repeat: no-repeat
+		border-radius: $br
+		opacity: 0.5
+		transition: all .3s ease
+		background-color: #292d20
+		box-shadow:  0px -50px 50px 10px rgba(0, 0, 0, .6) inset
+		&:nth-child(2)
+			background-image: url('../img/_src/secondary-house.png')
+			background-position: -80px 60px
+		&:nth-child(3)
+			background-image: url('../img/_src/house.png')
+		&:nth-child(4)
+			background-image: url('../img/_src/Townhouse.png')
+			background-position: -46px 130px
+		&_active
+			background-color: #fff
+			transform: translateY(-20px)
+			opacity: 1
+	&__price
+		font-family: 'Gilroy', sans-serif
+		font-size: 12px
+		letter-spacing: 0.2mm
+		line-height: 17px
+		color: #ffffff
+		font-weight: 300
+		padding: 10px 12px
+		background: $green
+		border-radius: $br
+		margin-top: 10px
+		width: fit-content
+	&__name
+		font-weight: 600
+		font-size: 20px
+		color: #ffffff
+
+.card
+	background: #fff
+	border-radius: $br
+	width: 100%
+	border-left: 15px solid $green
+	position: relative
+	&::before
+		content: ''
+		display: block
+		position: absolute
+		height: 100%
+		width: 15px
+		background-color: #ffffff
+		left: 0
+		top: 0
+		
+
+.valuation
+	display: flex
+	justify-content: space-between
+	&__card
+		// padding: 55px 0px 70px 95px
+	&__column
+		padding-top: 55px
+		padding-bottom: 70px
+		&:first-child
+			flex: 0 0 63.6%
+			padding-left: 95px
+		&:last-child
+			background-color: #f6f5f5
+			border-top-right-radius: $br
+			border-bottom-right-radius: $br
+			padding-left: 35px
+			position: relative
+			&::after
+				content: url('../img/_src/Drawing.png')
+				height: 304px
+				width: 100%
+				position: absolute
+				left: 0
+				bottom: -30px
+	&__button
+		padding: 30px 80px
+	&__heading
+		font-size: 22px
+		font-weight: 500
+		margin-bottom: 20px
+		width: 65%
+	&-part__price
+		font-size: 16px
+		font-family: 'Gilroy', sans-serif
+		margin-bottom: 10px
+	&-repair
+		&__value
+			font-size: 22px
+			font-family: 'Gilroy', sans-serif
+	&__result-value
+		font-size: 22px
+		color: $green
+		font-weight: 600
+
+.type-of-repair
+	display: flex
+	justify-content: space-between
+	width: 85%
+	margin-bottom: 45px
+	&__bold
+		font-weight: 900
+	&__name
+		font-size: 18px
+		letter-spacing: 0.2mm
+		// transition: all .3s ease
+		text-decoration: none
+		&_active
+			text-decoration: underline
+	&__price
+		font-family: 'Gilroy', sans-serif
+		font-size: 15px
+	&__item
+		cursor: pointer
+		opacity: 0.41
+		transition: all .3s ease
+		&_active
+			color: $green
+			opacity: 1
+	&__text
+		font-size: 16px
+		line-height: 34px
+		color: #000000
+		display: none
+		margin-bottom: 40px
+		&_visible
+			display: block
+
+
+
