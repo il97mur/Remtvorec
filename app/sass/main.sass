@@ -9,21 +9,21 @@
 	background-color: $accent
 	color: #fff
 
-input, textarea
-	outline: none
-	&:focus:required:invalid
-		border-color: red
-	&:required:valid
-		border-color: green
+// input, textarea
+// 	outline: none
+// 	&:focus:required:invalid
+// 		border-color: red
+// 	&:required:valid
+// 		border-color: green
 
-body
-	font-size: 16px
-	min-width: 320px
-	position: relative
-	line-height: 1.65
-	font-family: 'Roboto', sans-serif
-	overflow-x: hidden
-	color: $text
+// body
+// 	font-size: 16px
+// 	min-width: 320px
+// 	position: relative
+// 	line-height: 1.65
+// 	font-family: 'Roboto', sans-serif
+// 	overflow-x: hidden
+// 	color: $text
 
 // Custom Sass / Remove before use
 
@@ -36,5 +36,393 @@ body
 // 		left: auto
 // 		right: auto
 
+// Standart classes
 
+body, html
+	scroll-behavior: smooth
 
+.d-f
+	display: flex
+.jc-c
+	justify-content: center
+.jc-sb
+	justify-content: space-between
+.jc-sa
+	justify-content: space-around
+.ai-c
+	align-items: center
+.ai-s
+	align-items: start
+.ai-e
+	align-items: end
+.fw-w
+	flex-wrap: wrap
+.fw-nw
+	flex-wrap: nowrap
+.fd-r
+	flex-direction: row
+.fd-c
+	flex-direction: column
+.d-none
+	display: none !important
+.w-50
+	width: 50%
+
+// End standart classes
+
+.container
+	width: 1170px !important
+
+.row
+	width: 100%
+
+*
+	box-sizing: border-box
+
+html, body
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: 'Montserrat', sans-serif
+	overflow-x: hidden
+	width: 100%
+	height: 100vh
+	display: flex
+	justify-content: center
+	flex-wrap: wrap
+
+a
+	text-decoration: none
+	color: unset
+	&:hover
+		text-decoration: none
+p
+	padding: 0
+	margin: 0
+
+button
+	border: none
+	outline: none
+	cursor: pointer
+	background: none
+	&:focus
+		outline: none
+
+input
+	background: none
+	border: none
+	outline: none !important
+	font: unset
+
+textarea
+	border: none
+	outline: none
+
+.textarea
+	font-family: "Montserrat"
+
+fieldset
+	border: none
+	outline: none
+	padding: 0
+	margin: 0
+
+img
+	max-width: 100%
+
+h1,h2
+	padding: 0
+	margin: 0
+
+// Common styles
+
+.h1
+	font-size: 60px
+	color: #ffffff
+	font-weight: 400
+	line-height: 80px
+	&_black
+		color: #000000
+
+.bold
+	font-weight: bold
+
+.button
+	text-transform: uppercase
+	font-size: 19px
+	font-weight: 600
+	cursor: pointer
+	padding: 40px 65px
+	color: #ffffff
+	border-radius: 20.5px
+	background: linear-gradient(0deg, #1C9E70, #57B773)
+	box-shadow: 0px 0px 32px rgba(78,231,145, .63 ) inset, 0px 13px 57px rgba(17,192,129, .31 ), 0px 4px 4px #2b986a
+
+.main-wrapper
+	width: 100%
+	height: 100%
+
+.main-screen
+	width: 100%
+	height: 1067px
+	background-image: url('../img/_src/main-screen-bg.jpg')
+	background-repeat: no-repeat
+	// background-size: 101% 101%
+	background-position: center
+	padding-top: 30px
+	display: flex
+	justify-content: center
+	position: relative
+	&__container
+		display: flex
+		flex-direction: column
+	&__h1
+		margin-bottom: 20px
+	&__row
+		display: flex
+		justify-content: space-between
+		height: 100%
+	&__column
+		height: 100%
+		&:first-child
+			width: 100%
+		&:last-child
+			display: flex
+			align-items: flex-end
+			justify-content: flex-end
+	&__button
+		position: relative
+		padding-right: 100px
+		z-index: 5
+		&::after
+			content: url('../img/_src/calculator.png')
+			position: absolute
+			display: block
+			height: 100px
+			width: 120px
+			top: -10px
+			right: -25px
+	&__gift-card
+		width: 58%
+		padding-bottom: 170px !important
+		position: relative
+		&::before
+			content: 'Акции'
+			display: block
+			position: absolute
+			width: 100px
+			height: 100px
+			left: -50px
+			top: -50px
+			padding-top: 10px
+			font-size: 17px
+			color: $green
+			font-weight: 600
+			background: url('../img/_src/gift-bg.png')
+			background-size: contain
+			display: flex
+			align-items: center
+			justify-content: center
+			background-position: center
+			background-repeat: no-repeat
+	&__bushes
+		position: absolute
+		width: 100%
+		height: 1417px
+		background-image: url('../img/_src/bushes.png')
+		left: 0
+		top: 425px
+
+.look-project
+	position: absolute
+	left: 57%
+	top: 50%
+	display: flex
+	flex-direction: column
+	align-items: center
+	&__text
+		color: #ffffff
+		font-size: 16px
+		letter-spacing: 0.2mm
+		line-height: 10px
+	&__link
+		position: relative
+		font-size: 17px
+		text-decoration: underline
+		color: $green
+		z-index: 5
+		width: fit-content
+		text-align: center
+
+.header
+	width: 100%
+	margin-bottom: 80px
+	&__row
+		display: flex
+		justify-content: space-between
+		align-items: center
+	&__logo
+		display: flex
+		flex-direction: column
+		position: relative
+	&__menu
+		margin-top: 15px
+	&__info
+		margin-left: auto
+		display: flex
+		flex-direction: column
+		color: #ffffff
+		margin-top: 15px
+
+.logo
+	&__title
+		color: #ffffff
+		font-size: 14px
+		letter-spacing: 0.2mm
+		line-height: 20px
+		opacity: 0.6
+		position: absolute
+		width: 100%
+		bottom: -30px
+		left: 75px
+
+.work-all-day
+	font-size: 12px
+	font-weight: 500
+	opacity: 0.6
+	letter-spacing: .2mm
+	text-align: right
+
+.info
+	&__phone
+		font-size: 22px
+		font-weight: 600
+	&__get-callback
+		font-size: 14px
+		font-weight: 500
+		opacity: 0.66
+		text-decoration: underline
+		text-align: right
+
+.menu
+	&__item
+		font-size: 15px
+		font-weight: normal
+		color: #ffffff
+		margin: 0px 0px 0px 50px
+		letter-spacing: .2mm
+
+.project-price
+	width: 65%
+	font-size: 30px
+	font-weight: 400
+	color: #ffffff
+	line-height: 45px
+	margin-bottom: 50px
+	position: relative
+	&::after
+		content: url('../img/_src/price-arrow.png')
+		display: block
+		position: absolute
+		width: 104px
+		height: 160px
+		right: -80px
+		bottom: -130px
+
+.sec-accent
+	font-weight: bold
+	color: $green
+	padding: 5px 20px
+	position: relative
+	z-index: 1
+	margin-left: 20px
+	&::before
+		content: ''
+		display: block
+		position: absolute
+		width: 100%
+		height: 100%
+		z-index: -5
+		top: 0
+		left: 0
+		background-color: #fff
+		border-radius: 12px
+		transform: skew(-20deg)
+
+.gift-card
+	padding: 50px 30px
+	background-color: #000000
+	border-radius: $br
+	&__content
+		font-size: 16px
+		line-height: 25px
+		color: #ffffff
+		margin-bottom: 25px
+	&__link
+		position: relative
+		font-size: 17px
+		text-decoration: underline
+		color: $green
+		z-index: 5
+
+// CALCULATE
+
+.calculate
+	padding: 100px 0px 70px 0px
+	display: flex
+	justify-content: center
+	z-index: 5
+	position: relative
+	&__h1
+		line-height: 70px
+		text-align: center
+		margin-bottom: 30px
+	&__text
+		font-size: 22px
+		line-height: 42px
+		opacity: 0.67
+		text-align: center
+		color: #ffffff
+		margin-bottom: 100px
+
+.ui-widget
+	border: none !important
+
+.ui-widget-header
+	background: $green
+	border: none
+	border-radius: 200px
+
+.ui-widget-content
+	border: none
+	border-radius: 200px
+	height: 25px
+
+#custom-handle
+	width: 70px
+	height: 70px
+	border-radius: 200px
+	display: flex
+	justify-content: center
+	align-items: center
+	outline: none
+	top: 50%
+	transform: translateY(-50%)
+	text-align: center
+	line-height: 1.6em
+	font-size: 22px
+	font-weight: 300
+	color: #000000
+
+.ui-state-active
+	background: #ccc !important
+	border: none !important
+
+.ui-state-default
+	background: #ffffff
