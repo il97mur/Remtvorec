@@ -2,8 +2,8 @@
 @import fonts
 @import libs
 
-::placeholder
-	color: #666
+// ::placeholder
+// 	color: #666
 
 ::selection
 	background-color: $accent
@@ -151,6 +151,11 @@ h1,h2
 	line-height: 80px
 	&_black
 		color: #000000
+
+.h2
+	font-size: 36px
+	line-height: 48px
+	font-weight: 400
 
 .bold
 	font-weight: bold
@@ -376,7 +381,7 @@ h1,h2
 // CALCULATE
 
 .calculate
-	padding: 100px 0px 70px 0px
+	padding: 100px 0px 0px 0px
 	display: flex
 	justify-content: center
 	position: relative
@@ -411,7 +416,6 @@ h1,h2
 	display: flex
 	justify-content: center
 	flex-wrap: wrap
-	padding-bottom: 200px
 
 .c-area-slider
 	display: flex
@@ -484,7 +488,7 @@ h1,h2
 		opacity: 0.5
 		transition: all .3s ease
 		background-color: #292d20
-		box-shadow:  0px -50px 50px 10px rgba(0, 0, 0, .6) inset
+		box-shadow: 0px -50px 50px 10px rgba(0, 0, 0, .6) inset
 		&:nth-child(2)
 			background-image: url('../img/_src/secondary-house.png')
 			background-position: -80px 60px
@@ -529,7 +533,6 @@ h1,h2
 		background-color: #ffffff
 		left: 0
 		top: 0
-		
 
 .valuation
 	display: flex
@@ -608,5 +611,133 @@ h1,h2
 		&_visible
 			display: block
 
+.gifts
+	width: 100%
+	display: flex
+	justify-content: center
+	background-color: #000000
+	padding: 62px 0px 410px
+	&__container
+		display: flex
+		justify-content: center
+		flex-wrap: wrap
+	&__h1
+		width: 50%
+		text-align: center
+		margin-bottom: 50px
+	&__row
+		display: flex
+		justify-content: space-between
+	&__item
+		flex: 0 0 48.5%
+		padding: 40px 0px 40px 55px
+		height: 340px
+		position: relative
+		&:first-child
+			background-image: url('../img/_src/roller.png')
+			background-position: right bottom
+			background-repeat: no-repeat
+		&:last-child
+			background-image: url('../img/_src/box.png')
+			background-position: 120% 550%
+			background-repeat: no-repeat
+	&__name
+		font-size: 24px
+		line-height: 41px
+		margin-bottom: 30px
+		width: 85%
+	&__text
+		font-size: 17px
+		line-height: 29px
+		opacity: 0.5
 
+.get-calculation
+	display: flex
+	justify-content: center
+	width: 100%
+	&__card
+		padding: 50px 0px 40px 100px
+		transform: translateY(-50%)
+		position: relative
+		margin-bottom: -220px
+		&::after
+			content: url('../img/_src/form-bg.png')
+			position: absolute
+			top: -10px
+			right: -20px
+	&__content
+		width: 45%
+	&__h2
+		color: #000000
+		margin-bottom: 25px
+	&__text
+		font-size: 16px
+		opacity: 0.42
+		color: #000000
+		margin-bottom: 25px
+	&__form
+		width: 70%
+	&__button
+		width: 100%
+		padding: 27px 0px
+		margin-bottom: 25px
+		font-size: 16px
+		font-weight: 600
+	&__input
+		width: 100%
+		font-size: 16px
+		color: rgba(0,0,0, .5)
+		padding: 27px 35px 27px 80px
+		box-shadow: 0px 0px 10px 10px rgba(0,0,0, .04) inset
+		border-radius: $br
+		margin-bottom: 30px
+		font-weight: 300
 
+.personal-data-apply
+	font-size: 12px
+	text-align: center
+	width: 100%
+	opacity: 0.6
+	color: #000000
+	&__link
+		color: $green
+		text-decoration: underline
+
+.calc-adventages-wrap
+	background-image: url('../img/_src/advantages-bg.png')
+	position: relative
+	padding-bottom: 240px
+	&::after
+		position: absolute
+		background-image: url('../img/_src/clouds.png')
+		display: block
+		content: ''
+		bottom: 0px
+		left: 0
+		width: 100%
+		height: 442px
+
+.advantages
+	width: 63%
+	&__h1
+		margin-bottom: 120px
+	&__list
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+	&__item
+		flex: 0 0 43%
+		display: flex
+		flex-direction: column
+		align-items: center
+		margin-bottom: 50px
+		&:nth-child(2n)
+			flex: 0 0 29%
+			margin-right: 30px
+	&__img
+		margin-bottom: 20px
+	&__text
+		font-size: 17px
+		line-height: 30px
+		color: #000000
+		text-align: center
