@@ -99,11 +99,18 @@ body
 	justify-content: center
 	flex-wrap: wrap
 
+ul
+	list-style-type: none
+	margin: 0
+	padding: 0
+
 a
 	text-decoration: none
 	color: unset
+	transition: all .3s ease
 	&:hover
 		text-decoration: none
+		filter: brightness(70%)
 p
 	padding: 0
 	margin: 0
@@ -157,6 +164,11 @@ h1,h2
 	line-height: 48px
 	font-weight: 400
 
+.h3
+	font-size: 22px
+	color: #000
+	opacity: 0.5
+
 .bold
 	font-weight: bold
 
@@ -170,6 +182,29 @@ h1,h2
 	border-radius: 20.5px
 	background: linear-gradient(0deg, #1C9E70, #57B773)
 	box-shadow: 0px 0px 32px rgba(78,231,145, .63 ) inset, 0px 13px 57px rgba(17,192,129, .31 ), 0px 4px 4px #2b986a
+	transition: box-shadow .3s ease
+	&:hover
+		box-shadow: 0px 0px 32px rgba(78,231,145, .00 ) inset, 0px 13px 57px rgba(17,192,129, .31 ), 0px 4px 4px rgba(#2b986a, 1)
+	&:active
+		transition: none
+		box-shadow: 0px 0px 32px rgba(78,231,145, .00 ) inset, 0px 13px 57px rgba(17,192,129, .31 ), 0px 4px 4px rgba(#2b986a, 0)
+	&__text
+		text-shadow: 0px 0px 8px rgba(#53feb9, 0.4)
+		-webkit-background-clip: text !important
+     	-moz-background-clip: text
+        background-clip: text
+
+.input
+	width: 100%
+	font-size: 16px
+	color: rgba(0,0,0, .5)
+	padding: 27px 35px 27px 80px
+	box-shadow: 0px 0px 10px 10px rgba(0,0,0, .04) inset
+	border-radius: $br
+	margin-bottom: 30px
+	font-weight: 300
+	&_tel
+		margin-top: -30px
 
 .main-wrapper
 	width: 100%
@@ -181,7 +216,7 @@ h1,h2
 	background-image: url('../img/_src/main-screen-bg.jpg')
 	background-repeat: no-repeat
 	// background-size: 101% 101%
-	background-position: center
+	background-position: -6px -6px
 	padding-top: 30px
 	display: flex
 	justify-content: center
@@ -248,7 +283,7 @@ h1,h2
 
 .look-project
 	position: absolute
-	left: 57%
+	left: 60%
 	top: 50%
 	display: flex
 	flex-direction: column
@@ -266,6 +301,9 @@ h1,h2
 		z-index: 5
 		width: fit-content
 		text-align: center
+		&:hover
+			text-decoration: underline
+			color: $green
 
 .header
 	width: 100%
@@ -279,13 +317,8 @@ h1,h2
 		flex-direction: column
 		position: relative
 	&__menu
-		margin-top: 15px
 	&__info
-		margin-left: auto
-		display: flex
-		flex-direction: column
-		color: #ffffff
-		margin-top: 15px
+
 
 .logo
 	&__title
@@ -298,6 +331,9 @@ h1,h2
 		width: 100%
 		bottom: -30px
 		left: 75px
+	&__link
+		&:hover
+			filter: none 
 
 .work-all-day
 	font-size: 12px
@@ -307,23 +343,48 @@ h1,h2
 	text-align: right
 
 .info
+	margin-left: auto
+	display: flex
+	flex-direction: column
+	color: #ffffff
+	margin-top: 15px
 	&__phone
 		font-size: 22px
 		font-weight: 600
-	&__get-callback
+		&:hover
+			color: #ffffff
+	&__get-callback-link
 		font-size: 14px
 		font-weight: 500
 		opacity: 0.66
 		text-decoration: underline
 		text-align: right
+		&:hover
+			text-decoration: underline
+			color: #ffffff
+	&__get-price-link
+		font-size: 12px
+		font-weight: 500
+		text-decoration: underline
+		color: #54b672
+		&:hover
+			text-decoration: underline
+			color: #54b672
+
 
 .menu
+	margin-top: 15px
 	&__item
 		font-size: 15px
 		font-weight: normal
 		color: #ffffff
 		margin: 0px 0px 0px 50px
 		letter-spacing: .2mm
+		transition: all .3 ease
+		&:hover
+			color: #ffffff
+		&_m0
+			margin: 0
 
 .project-price
 	width: 65%
@@ -377,6 +438,9 @@ h1,h2
 		text-decoration: underline
 		color: $green
 		z-index: 5
+		&:hover
+			color: $green
+			text-decoration: underline
 
 // CALCULATE
 
@@ -651,6 +715,20 @@ h1,h2
 		line-height: 29px
 		opacity: 0.5
 
+.name__icon
+	background-image: url('../img/_src/name-icon.png')
+	width: 22px
+	height: 22px
+	margin-bottom: -58px
+	margin-left: 35px
+
+.phone__icon
+	background-image: url('../img/_src/phone-icon.png')
+	width: 22px
+	height: 22px
+	margin-bottom: -31px
+	margin-left: 35px
+
 .get-calculation
 	display: flex
 	justify-content: center
@@ -684,14 +762,7 @@ h1,h2
 		font-size: 16px
 		font-weight: 600
 	&__input
-		width: 100%
-		font-size: 16px
-		color: rgba(0,0,0, .5)
-		padding: 27px 35px 27px 80px
-		box-shadow: 0px 0px 10px 10px rgba(0,0,0, .04) inset
-		border-radius: $br
-		margin-bottom: 30px
-		font-weight: 300
+
 
 .personal-data-apply
 	font-size: 12px
@@ -702,6 +773,9 @@ h1,h2
 	&__link
 		color: $green
 		text-decoration: underline
+		&:hover
+			color: $green
+			text-decoration: underline
 
 .calc-adventages-wrap
 	background-image: url('../img/_src/advantages-bg.png')
@@ -726,7 +800,7 @@ h1,h2
 		justify-content: space-between
 		flex-wrap: wrap
 	&__item
-		flex: 0 0 43%
+		flex: 0 0 38%
 		display: flex
 		flex-direction: column
 		align-items: center
@@ -741,3 +815,568 @@ h1,h2
 		line-height: 30px
 		color: #000000
 		text-align: center
+
+.portfolio
+	display: flex
+	justify-content: center
+	width: 100%
+	&__h1
+		margin-bottom: 40px
+		width: 50%
+		text-align: center
+	&__h3
+	&__container
+		display: flex
+		flex-direction: column
+		align-items: center
+		position: relative
+	&__button
+		padding: 35px 65px
+		margin-left: 25px
+
+.portfolio-item
+	border-radius: $br
+	background-color: #fff
+	box-shadow: 0px 0px 20px .5px rgba(0,0,0, .15)
+	margin: 110px 0
+	// width: 100%
+	// height: 600px
+	padding: 50px 60px
+	padding-right: 90px
+	display: flex
+	justify-content: space-between
+	position: relative
+	&::before
+		position: absolute
+		content: ''
+		display: block
+		width: 95%
+		height: 50%
+		border-radius: $br
+		z-index: -1
+		left: 50%
+		transform: translateX(-50%)
+		bottom: -20px
+		box-shadow: 0px 0px 20px .5px rgba(0,0,0, .05)
+	&__column
+		flex: 0 0 45%
+	&__images
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+	&__img
+		border-radius: $br
+		opacity: 0.5
+		&_big
+			width: 100%
+			margin-bottom: 15px
+			opacity: 1
+			height: 340px
+		&_preview
+			flex: 0 0 23%
+			width: 20% !important
+			border-radius: 10px
+			height: 75px
+		&_active
+			opacity: 1
+	&__images-row
+		display: flex
+		justify-content: space-between
+	&__title
+		font-size: 30px
+		// line-height: 74px
+		color: $green
+		margin-bottom: 40px
+		font-weight: 500
+	&__paramethers
+		display: flex
+		justify-content: space-between
+
+.portfolio-item-paramethers
+	display: flex
+	justify-content: space-between
+	align-items: center
+	margin-bottom: 55px
+	&__row
+		display: flex
+		flex-wrap: wrap
+	&__column
+		flex: 0 0 40%
+	&__type-column
+		font-size: 18px
+		line-height: 18px
+		font-weight: 500
+		color: #000000
+	&__value-column
+		font-size: 16px
+		color: #000000
+	&__type
+		margin-bottom: 30px
+	&__value
+		margin-bottom: 30px
+		opacity: 0.5
+		line-height: 18px
+		&_price
+			font-size: 22px
+			opacity: 1
+			font-weight: 600
+
+.owl-nav
+	// position: absolute
+	// width: 100%
+	// background-color: red
+	// top: 50%
+	// left: 50%
+	// transform: translate(-50%, -50%)
+	// display: flex
+	// justify-content: space-between
+	// width: 1250px
+
+.owl-theme .owl-nav [class*=owl-]
+	background-color: $green !important
+	border-radius: 500px
+	width: 75px
+	height: 75px
+
+.owl-prev, .owl-next
+	position: absolute
+	top: 50%
+	transform: translateY(-50%)
+	display: flex
+	align-items: center
+
+.owl-prev
+	left: 18%
+
+.owl-next
+	right: 18%
+
+.owl-carousel .owl-nav button.owl-next
+	font-family: "Montserrat", sans-serif
+	font-weight: 100
+	font-size: 50px
+	color: #ffffff
+
+.owl-carousel .owl-nav button.owl-prev
+	font-family: "Montserrat", sans-serif
+	font-size: 50px
+	color: #ffffff
+	font-weight: 100
+
+.portfolio-slider
+	width: 100vw
+	position: relative
+	
+
+.get-callback
+	width: 100%
+	display: flex
+	justify-content: center
+	padding-bottom: 250px
+	position: relative
+	&__container	
+		display: flex
+		justify-content: center
+	&__column
+		&:first-child
+			flex: 0 0 55%
+		&:last-child
+			flex: 0 0 35%
+			position: relative
+			&::after
+				content: url('../img/_src/white-pen.png')
+				position: absolute
+				top: 0
+				right: -90%
+	&__card
+		padding: 55px 120px 25px 95px
+		box-shadow: 0px 0px 76px 10px rgba(#ccc, .25)
+		display: flex
+		justify-content: space-between
+	&__button
+		width: 100%
+		padding: 27px 0px
+		margin-bottom: 25px
+		font-size: 16px
+		font-weight: 600
+	&__h2
+		margin-bottom: 50px
+	&__point-item
+		font-size: 16px
+		line-height: 30px
+		color: #000000
+		opacity: 0.5
+		display: flex
+		align-items: center
+		&::before
+			content: url('../img/_src/check-mark.png')
+			margin-right: 10px
+		&:last-child
+			&::before
+				display: none
+	&::after
+		position: absolute
+		background-image: url('../img/_src/clouds_reverse.png')
+		background-position: center bottom
+		display: block
+		content: ''
+		bottom: -200px
+		left: 0
+		width: 100%
+		height: 440px
+		z-index: -1
+
+.tariffs
+	width: 100%
+	display: flex
+	justify-content: center
+	background-image: url('../img/_src/tariffs-bg.png')
+	margin-top: -300px
+	padding-top: 250px
+	position: relative
+	z-index: -2
+	padding-bottom: 150px
+	&__container
+		display: flex
+		align-items: center
+		flex-direction: column
+	&__h1
+		text-align: center
+		width: 50%
+		margin-top: 50px
+		margin-bottom: 35px
+	&__h3
+		color: #ffffff
+		margin-bottom: 50px
+	&::after
+		position: absolute
+		content: ''
+		display: block
+		left: 0
+		bottom: -80px
+		background-image: url('../img/_src/clouds-2.png')
+		width: 100%
+		height: 400px
+		z-index: -1
+
+.tariff-type-row
+	width: 66.666%
+	border-radius: 10px
+	border: 1px rgba(#fff, 0.5) solid
+	display: flex
+	justify-content: space-between
+	margin-bottom: 60px
+	padding-bottom: 4px
+
+.tariff__type
+	padding: 40px 0px 36px
+	flex: 0 0 33.3333%
+	font-size: 13px
+	text-transform: uppercase
+	color: #ffffff
+	opacity: 0.5
+	display: flex
+	justify-content: center
+	align-items: center
+	border-right: 1px solid rgba(#fff, 0.5)
+	border-radius: 9px
+	font-weight: 600
+	cursor: pointer
+	transition: all .3s ease
+	&:first-child
+		border-top-right-radius: 0px
+		border-bottom-right-radius: 0px
+	&:nth-child(2)
+		border-radius: 0px
+	&:last-child
+		border: none
+		border-top-left-radius: 0px
+		border-bottom-left-radius: 0px
+	&_active
+		opacity: 1
+		background-color: #4fb471
+		box-shadow: 0px 4px 0px #2b986a
+
+.tariff-content
+	display: flex
+	justify-content: space-between
+	&__column
+		flex: 0 0 29.15%
+		background: #fff
+		border-radius: $br
+		padding-bottom: 40px
+		display: flex
+		flex-direction: column
+		align-self: flex-start
+	&__container
+		width: 85%
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+	&__title-row
+		display: flex
+		justify-content: center
+		background: #4fb471
+		border-radius: $br
+		border-bottom-left-radius: 0px
+		border-bottom-right-radius: 0px
+		color: #ffffff
+		margin-bottom: 15px
+		padding: 40px 0px 30px
+		position: relative
+		z-index: 1
+		&_last
+			padding-bottom: 20px
+			padding-top: 35px
+	&__title
+		font-size: 21px
+		font-weight: 600
+		width: fit-content
+		display: flex
+		align-items: center
+	&__content-row
+		display: flex
+		justify-content: center
+	&__heading
+		font-size: 18px
+		font-weight: 500
+	&__service-list
+		margin-bottom: 60px
+	&__service-item
+		margin: 25px 0px
+		font-size: 15px
+		line-height: 25px
+		font-weight: 300
+		position: relative
+		padding-left: 35px
+		&:last-child
+			margin-bottom: 0
+		&::before
+			content: ''
+			display: inline-block
+			width: 25px
+			height: 100%
+			left: 0
+			background-image: url('../img/_src/list-marker.png')
+			background-repeat: no-repeat
+			margin-right: 10px
+			position: absolute
+	&__paramether
+		font-size: 15px
+		font-weight: 500
+		margin-bottom: 10px
+		&_last
+			margin-bottom: 40px
+	&__value
+		font-size: 18px
+		font-weight: 700
+		color: #52b572
+	&__button
+		padding: 30px 70px
+		font-size: 15.5px
+		width: 100%
+
+.recommended
+	color: #4fb471
+	display: flex
+	align-items: center
+	font-size: 12px
+	padding: 15px 25px
+	position: relative
+	&::before
+		background: #ffffff
+		position: absolute
+		width: 100%
+		height: 100%
+		content: ''
+		display: block
+		transform: skew(-20deg)
+		border-radius: 20px
+		top: 0
+		left: 0
+		z-index: -1
+
+.steps
+	width: 100%
+	display: flex
+	justify-content: center
+	&__container
+		display: flex
+		justify-content: center
+		flex-wrap: wrap
+	&__row
+		display: flex
+		justify-content: space-between
+		flex-wrap: wrap
+	&__h1
+		width: 66.6666%
+		text-align: center
+		margin-bottom: 100px
+	&__item
+		flex: 0 0 21%
+		background-color: #fff
+		padding: 0px 30px
+		padding-bottom: 50px
+		border-radius: $br
+		box-shadow: 0px 0px 76px rgba(#ccc, 0.4)
+		margin-bottom: 115px
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		position: relative
+		height: 300px
+		&:nth-child(3n+2)
+			margin: 0px 100px
+			margin-bottom: 100px
+		&::before
+			position: absolute
+			content: ''
+			display: block
+			width: 85%
+			height: 50%
+			border-radius: $br
+			z-index: -1
+			left: 50%
+			transform: translateX(-50%)
+			bottom: -20px
+			box-shadow: 0px 0px 20px .5px rgba(0,0,0, .05)
+	&__number
+		color: #ffffff
+		font-size: 17px
+		font-weight: 500
+		padding: 10px 40px
+		margin-top: -20px
+		position: relative
+		align-self: flex-start
+		z-index: 1
+		margin-bottom: 18px
+		&::before
+			background-color: #4db372
+			content: ''
+			display: block
+			z-index: -1
+			position: absolute
+			width: 100%
+			height: 100%
+			top: 0
+			left: 0
+			border-radius: 15px
+			transform: skew(-20deg)
+	&__icon
+		margin-bottom: 15px
+		align-self: flex-start
+	&__text
+		font-size: 18px
+		line-height: 30px
+		font-weight: 500
+		text-align: center
+	&__link
+		font-size: 21px
+		line-height: 35px
+		font-weight: 500
+		color: #4db372
+		text-decoration: underline
+		text-align: center
+		&:hover
+			color: #4db372
+			text-decoration: underline
+
+.have-questions
+	width: 100%
+	display: flex
+	justify-content: center
+	background-image: url('../img/_src/last-screen-bg.png')
+	background-repeat: no-repeat
+	padding-top: 195px
+	position: relative
+	z-index: -2
+	&__container
+		display: flex
+		justify-content: center
+	&__column
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		&:first-child
+			background-image: url('../img/_src/man.png')
+			background-repeat: no-repeat
+			background-position: center bottom
+			background-size: contain
+			flex: 0 0 60%
+			margin-left: -40px
+		&:last-child
+			flex: 0 0 41.5%
+	&__content
+		background-color: #ffffff
+		border-radius: $br
+		padding: 50px 50px 45px
+		display: flex
+		justify-content: center
+		flex-wrap: wrap
+		box-shadow: 0px 0px 76px rgba(#ccc, 0.4)
+		position: relative
+		margin-bottom: 95px
+		&::before
+			position: absolute
+			content: ''
+			display: block
+			width: 85%
+			height: 50%
+			border-radius: $br
+			z-index: -1
+			left: 50%
+			transform: translateX(-50%)
+			bottom: -20px
+			background-color: rgba(#fff, 0.8)
+			box-shadow: 0px 0px 20px .5px rgba(#000, .05)
+	&__title
+		font-size: 36px
+		margin-bottom: 20px
+		text-align: center
+	&__text
+		opacity: 0.5
+		font-size: 16px
+		line-height: 28px
+		text-align: center
+		margin-bottom: 45px
+	&__form
+		width: 90%
+	&__button
+		padding: 27px 0px
+		width: 100%
+		margin-bottom: 35px
+
+.footer
+	width: 100%
+	display: flex
+	justify-content: center
+	background-color: #2e2e2e
+	&__container
+		display: flex
+		justify-content: center
+	&__row
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 40px 0px
+	&__logo
+		flex: 0 0 16.666%
+	&__info
+		margin-top: 30px
+	&__phone
+		font-size: 16px
+		font-weight: 600
+	&__menu
+		flex: 0 0 50%
+		display: flex
+		justify-content: space-evenly
+
+.author
+	font-size: 15px
+	color: #ffffff
+	opacity: 0.39
+	line-height: 25px
+	margin-top: 15px
+
+			
+

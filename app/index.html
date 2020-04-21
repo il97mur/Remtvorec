@@ -36,13 +36,13 @@
 				<header class="header">
 					<div class="row header__row">
 						<div class="logo header__logo">
-							<a href="index.html"><img src="img/_src/logo.png" alt="Ремтворец" class="logo__img"></a>
+							<a class="logo__link" href="index.html"><img src="img/_src/logo.png" alt="Ремтворец" class="logo__img"></a>
 							<div class="logo__title">Ремонт квартир в Москве и МО <span class="bold">с гарантией качества</span></div>
 						</div>
 
 						<nav class="menu header__menu">
 							<a href="#" class="menu__item">Калькулятор</a>
-							<a href="#" class="menu__item">Гарании</a>
+							<a href="#" class="menu__item">Гарантии</a>
 							<a href="#" class="menu__item">Работы</a>
 							<a href="#" class="menu__item">Тарифы</a>
 						</nav>
@@ -50,7 +50,7 @@
 						<div class="info header__info">
 							<p class="work-all-day">Работаем 24 часа</p>
 							<a href="#" class="info__phone">+7 495 123-45-21</a>
-							<a href="#" class="get-callback info__get-callback">Заказать звонок</a>
+							<a href="#" class="info__get-callback-link">Заказать звонок</a>
 						</div>
 					</div>
 				</header>
@@ -59,7 +59,7 @@
 					<div class="main-screen__column">
 						<h1 class="h1 main-screen__h1">Ремонт и строительство любой <span class="bold">недвижимости</span></h1>
 						<p class="project-price">Узнайте стоимость проекта за <span class="sec-accent">8 секунд</span></p>
-						<button class="button main-screen__button">Узнать стоимость</button>
+						<button class="button main-screen__button"><div class="button__text">Узнать стоимость</div></button>
 					
 					
 					</div>
@@ -209,7 +209,9 @@
 								<p class="get-calculation__text">Вам перезвонит специалист в течение 20 минут</p>
 								
 								<form action="#" class="form get-calculation__form">
+									<label for="name" class="label name__icon"></label>
 									<input type="text" name="name" placeholder="Введите Ваше имя" class="input input_text get-calculation__input">
+									<label for="tel" class="label phone__icon"></label>
 									<input type="tel" name="tel" placeholder="Введите Ваш телефон" class="input input_tel get-calculation__input">
 									<button type="submit" class="button get-calculation__button button_submit">Получить</button>
 									<p class="personal-data-apply">Нажимая на кнопку, Вы даёте своё согласие на <a href="#" class="personal-data-apply__link">обработку персональных данных</a></p>
@@ -226,27 +228,366 @@
 									<p class="advantages__text">Бесплатный выезд замерщика в течение <span class="bold">36 часов</span></p>
 								</div>
 								<div class="advantages__item">
-									<img class="advantages__img" src="img/_src/advantage.png" alt="">
-									<p class="advantages__text">Бесплатный выезд замерщика в течение 36 часов</p>
+									<img class="advantages__img" src="img/_src/advantage-2.png" alt="">
+									<p class="advantages__text">Видеоотчеты каждую неделю</p>
 								</div>
 								<div class="advantages__item">
-									<img class="advantages__img" src="img/_src/advantage.png" alt="">
-									<p class="advantages__text">Бесплатный выезд замерщика в течение 36 часов</p>
+									<img class="advantages__img" src="img/_src/advantage-3.png" alt="">
+									<p class="advantages__text">Окончательная сметная стоимость без доплат и переплат</p>
 								</div>
 								<div class="advantages__item">
-									<img class="advantages__img" src="img/_src/advantage.png" alt="">
-									<p class="advantages__text">Бесплатный выезд замерщика в течение 36 часов</p>
+									<img class="advantages__img" src="img/_src/advantage-4.png" alt="">
+									<p class="advantages__text">Гарантии на работы до 3-х лет</p>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 
+		<setcion class="portfolio">
+			<div class="container portfolio__container">
+				<div class="h1 h1_black portfolio__h1">Посмотрите <span class="bold">наши работы</span></div>
+				<div class="h3 portfolio__h3">Воплотили статус и характер в каждом метре</div>
+
+				<div class="portfolio-slider owl-carousel owl-theme">
+
+					<div class="portfolio-item">
+						<div class="portfolio-item__images portfolio-item__column">
+							<div class="row">
+								<img src="img/_src/portfolio-img.png" alt="" class="portfolio-item__img portfolio-item__img_big">
+							</div>
+
+							<div class="row portfolio-item__images-row">
+								<img src="img/_src/portfolio-img.png" alt="" class="portfolio-item__img portfolio-item__img_active portfolio-item__img_preview">
+								<img src="img/_src/advantage.png" alt="" class="portfolio-item__img portfolio-item__img_preview">
+								<img src="img/_src/portfolio-img.png" alt="" class="portfolio-item__img portfolio-item__img_preview">
+								<img src="img/_src/portfolio-img.png" alt="" class="portfolio-item__img portfolio-item__img_preview">
+							</div>
+						</div>
+						<div class="portfolio-item__text portfolio-item__column">
+							<p class="portfolio-item__title">Дом Металлургов 12</p>
+							<div class="portfolio-item-paramethers row">
+								<div class="portfolio-item-paramethers__column portfolio-item-paramethers__type-column">
+									<p class="portfolio-item-paramethers__type">Объект</p>
+									<p class="portfolio-item-paramethers__type">Тип ремонта</p>
+									<p class="portfolio-item-paramethers__type">Площадь</p>
+									<p class="portfolio-item-paramethers__type">Срок</p>
+									<p class="portfolio-item-paramethers__type">Стоимость работ</p>
+								</div>
+								<div class="portfolio-item-paramethers__column portfolio-item-paramethers__value-column">
+									<div class="portfolio-item-paramethers__value">Вторичное жилье</div>
+									<div class="portfolio-item-paramethers__value">капитальный</div>
+									<div class="portfolio-item-paramethers__value">43 м2</div>
+									<div class="portfolio-item-paramethers__value">36 дней</div>
+									<div class="portfolio-item-paramethers__value portfolio-item-paramethers__value_price">365 000 р.</div>
+								</div>
+							</div>
+
+							<button class="button portfolio__button">Заказать подобный</button>
+						</div>
+
+					</div>
+					
+					<div class="portfolio-item">
+						<div class="portfolio-item__images portfolio-item__column">
+							<div class="row">
+								<img src="img/_src/portfolio-img.png" alt="" class="portfolio-item__img portfolio-item__img_big">
+							</div>
+
+							<div class="row portfolio-item__images-row">
+								<img src="img/_src/portfolio-img.png" alt="" class="portfolio-item__img portfolio-item__img_active portfolio-item__img_preview">
+								<img src="img/_src/advantage.png" alt="" class="portfolio-item__img portfolio-item__img_preview">
+								<img src="img/_src/portfolio-img.png" alt="" class="portfolio-item__img portfolio-item__img_preview">
+								<img src="img/_src/portfolio-img.png" alt="" class="portfolio-item__img portfolio-item__img_preview">
+							</div>
+						</div>
+						<div class="portfolio-item__text portfolio-item__column">
+							<p class="portfolio-item__title">Дом Металлургов 12</p>
+							<div class="portfolio-item-paramethers row">
+								<div class="portfolio-item-paramethers__column portfolio-item-paramethers__type-column">
+									<p class="portfolio-item-paramethers__type">Объект</p>
+									<p class="portfolio-item-paramethers__type">Тип ремонта</p>
+									<p class="portfolio-item-paramethers__type">Площадь</p>
+									<p class="portfolio-item-paramethers__type">Срок</p>
+									<p class="portfolio-item-paramethers__type">Стоимость работ</p>
+								</div>
+								<div class="portfolio-item-paramethers__column portfolio-item-paramethers__value-column">
+									<div class="portfolio-item-paramethers__value">Вторичное жилье</div>
+									<div class="portfolio-item-paramethers__value">капитальный</div>
+									<div class="portfolio-item-paramethers__value">43 м2</div>
+									<div class="portfolio-item-paramethers__value">36 дней</div>
+									<div class="portfolio-item-paramethers__value portfolio-item-paramethers__value_price">365 000 р.</div>
+								</div>
+							</div>
+
+							<button class="button portfolio__button">Заказать подобный</button>
+						</div>
+					</div>
+
+					<div class="portfolio-item">
+						<div class="portfolio-item__images portfolio-item__column">
+							<div class="row">
+								<img src="img/_src/portfolio-img.png" alt="" class="portfolio-item__img portfolio-item__img_big">
+							</div>
+
+							<div class="row portfolio-item__images-row">
+								<img src="img/_src/portfolio-img.png" alt="" class="portfolio-item__img portfolio-item__img_active portfolio-item__img_preview">
+								<img src="img/_src/advantage.png" alt="" class="portfolio-item__img portfolio-item__img_preview">
+								<img src="img/_src/portfolio-img.png" alt="" class="portfolio-item__img portfolio-item__img_preview">
+								<img src="img/_src/portfolio-img.png" alt="" class="portfolio-item__img portfolio-item__img_preview">
+							</div>
+						</div>
+						<div class="portfolio-item__text portfolio-item__column">
+							<p class="portfolio-item__title">Дом Металлургов 12</p>
+							<div class="portfolio-item-paramethers row">
+								<div class="portfolio-item-paramethers__column portfolio-item-paramethers__type-column">
+									<p class="portfolio-item-paramethers__type">Объект</p>
+									<p class="portfolio-item-paramethers__type">Тип ремонта</p>
+									<p class="portfolio-item-paramethers__type">Площадь</p>
+									<p class="portfolio-item-paramethers__type">Срок</p>
+									<p class="portfolio-item-paramethers__type">Стоимость работ</p>
+								</div>
+								<div class="portfolio-item-paramethers__column portfolio-item-paramethers__value-column">
+									<div class="portfolio-item-paramethers__value">Вторичное жилье</div>
+									<div class="portfolio-item-paramethers__value">капитальный</div>
+									<div class="portfolio-item-paramethers__value">43 м2</div>
+									<div class="portfolio-item-paramethers__value">36 дней</div>
+									<div class="portfolio-item-paramethers__value portfolio-item-paramethers__value_price">365 000 р.</div>
+								</div>
+							</div>
+
+							<button class="button portfolio__button">Заказать подобный</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</setcion>
+
+		<section class="get-callback">
+			<div class="container get-callback__container">
+				<div class="card get-callback__card">
+					<div class="get-callback__column">
+						<div class="h2 get-callback__h2">Оставьте Ваши данные, и <span class="bold">мы свяжемся с Вами</span></div>
+						<div class="get-callback__point-list">
+							<div class="get-callback__point-item">Зададим основные вопросы по параметрам квартиры</div>
+							<div class="get-callback__point-item">Поможем выбрать тип ремонта и рассчитать смету</div>
+							<div class="get-callback__point-item">Договоримся о бесплатном выезде замерщика</div>
+							<div class="get-callback__point-item">Ответим на любые Ваши вопросы по ремонту квартир.</div>
+							<div class="get-callback__point-item">Мы понимаем, что это трудно.</div>
+						</div>
+					</div>
+					<div class="get-callback__column">
+						<form action="#" class="form get-callback__form">
+							<label for="name" class="label name__icon"></label>
+							<input type="text" name="name" placeholder="Введите Ваше имя" class="input input_text get-callback__input">
+							<label for="tel" class="label phone__icon"></label>
+							<input type="tel" name="tel" placeholder="Введите Ваш телефон" class="input input_tel get-callback__input">
+							<button type="submit" class="button get-callback__button button_submit">Получить</button>
+							<p class="personal-data-apply">Нажимая на кнопку, Вы даёте своё согласие на <a href="#" class="personal-data-apply__link">обработку персональных данных</a></p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="tariffs">
+			<div class="container tariffs__container">
+				<div class="h1 tariffs__h1">Посмотрите <span class="bold">наши тарифы</span></div>
+				<div class="h3 tariffs__h3">Укажите сведения об объекте</div>
+				<div class="row tariff-type-row">
+					<div class="tariff__type tariff__type_active">новостройка</div>
+					<div class="tariff__type">Вторичное жилье</div>
+					<div class="tariff__type">строительство</div>
+				</div>
+				<div class="row tariff-content">
+					<div class="tariff-content__column">
+						<div class="row tariff-content__title-row">
+							<div class="tariff-content__container">
+								<p class="tariff-content__title">Косметический</p>
+							</div>
+						</div>
+						<div class="row tariff-content__content-row">
+							<div class="tariff-content__container">
+								<div class="tariff-content__heading">Включает в себя:</div>
+								<ul class="tariff-content__service-list">
+									<li class="tariff-content__service-item">Демонтаж старых покрытий</li>
+									<li class="tariff-content__service-item">Полная или частичная замена непригодных элементов пола</li>
+									<li class="tariff-content__service-item">Замена сантехники</li>
+									<li class="tariff-content__service-item">Замена электроприборов учета</li>
+									<li class="tariff-content__service-item">Замена настенных покрытий</li>
+									<li class="tariff-content__service-item">Качественное обновление настенных покрытий</li>
+								</ul>
+
+								<div class="tariff-content__paramether">Сроки: <span class="tariff-content__value">20-40 дней</span></div>
+								<div class="tariff-content__paramether">Материалы: <span class="tariff-content__value">от 2500 р./м2</span></div>
+								<div class="tariff-content__paramether tariff-content__paramether_last">Работы: <span class="tariff-content__value">от 4250 р./м2</span></div>
+
+								<button class="button tariff-content__button">Заказать смету</button>
+							</div>
+						</div>
+
+						
+					</div>
+					<div class="tariff-content__column">
+						<div class="row tariff-content__title-row">
+							<div class="tariff-content__container">
+								<p class="tariff-content__title">Капитальный</p>
+							</div>
+						</div>
+						<div class="row tariff-content__content-row">
+							<div class="tariff-content__container">
+								<div class="tariff-content__heading">Включает в себя:</div>
+								<ul class="tariff-content__service-list">
+									<li class="tariff-content__service-item">Демонтаж старых покрытий</li>
+									<li class="tariff-content__service-item">Перепланировка</li>
+									<li class="tariff-content__service-item">Выравнивание всех поверхностей</li>
+									<li class="tariff-content__service-item">Качественное обновление настенных покрытий</li>
+									<li class="tariff-content__service-item">Замена внутренних коммуникаций</li>
+									<li class="tariff-content__service-item">Замена дверей</li>
+									<li class="tariff-content__service-item">Замена инженерных систем</li>
+									<li class="tariff-content__service-item">Замена напольной и настольной плиточной облицовки</li>
+									<li class="tariff-content__service-item">Замена сантехники</li>
+									<li class="tariff-content__service-item">Устройство вентиляции и вытяжки</li>
+								</ul>
+
+								<div class="tariff-content__paramether">Сроки: <span class="tariff-content__value">30-60 дней</span></div>
+								<div class="tariff-content__paramether">Материалы: <span class="tariff-content__value">от 3500 р./м2</span></div>
+								<div class="tariff-content__paramether tariff-content__paramether_last">Работы: <span class="tariff-content__value">от 6250 р./м2</span></div>
+
+								<button class="button tariff-content__button">Заказать смету</button>
+							</div>
+						</div>
+
+						
+					</div>
+
+					<div class="tariff-content__column">
+						<div class="row tariff-content__title-row tariff-content__title-row_last">
+							<div class="tariff-content__container">
+								<p class="tariff-content__title">Элитный</p>
+								<div class="recommended">Рекомендуем</div>
+							</div>
+						</div>
+						<div class="row tariff-content__content-row">
+							<div class="tariff-content__container">
+								<div class="tariff-content__heading">Включает в себя:</div>
+								<ul class="tariff-content__service-list">
+									<li class="tariff-content__service-item">Демонтаж старых покрытий</li>
+									<li class="tariff-content__service-item">Перепланировка</li>
+									<li class="tariff-content__service-item">Дизайн-проект</li>
+									<li class="tariff-content__service-item">Замена внутренних коммуникаций</li>
+									<li class="tariff-content__service-item">Выравнивание всех поверхностей</li>
+									<li class="tariff-content__service-item">Качественная отделка дорогостоящими материалами</li>
+									<li class="tariff-content__service-item">Замена дверей и окон</li>
+									<li class="tariff-content__service-item">Замена инженерных систем и приборов учета</li>
+									<li class="tariff-content__service-item">Замена напольной и настольной плиточной облицовки</li>
+									<li class="tariff-content__service-item">Замена сантехники</li>
+									<li class="tariff-content__service-item">Устройство вентиляции и вытяжки</li>
+								</ul>
+
+								<div class="tariff-content__paramether">Сроки: <span class="tariff-content__value">20-40 дней</span></div>
+								<div class="tariff-content__paramether">Материалы: <span class="tariff-content__value">от 2500 р./м2</span></div>
+								<div class="tariff-content__paramether tariff-content__paramether_last">Работы: <span class="tariff-content__value">от 4250 р./м2</span></div>
+
+								<button class="button tariff-content__button">Заказать смету</button>
+							</div>
+						</div>
+
+						
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="steps">
+			<div class="container steps__container">
+				<div class="h1 h1_black steps__h1">6 шагов к <span class="bold">идеальному ремонту</span></div>
+
+				<div class="row steps__row">
+					<div class="steps__item">
+						<p class="steps__number">1 шаг</p>
+						<img src="img/_src/step-icon-1.png" alt="" class="steps__icon">
+						<p class="steps__text">Заключение договора</p>
+					</div>
+					<div class="steps__item">
+						<p class="steps__number">2 шаг</p>
+						<img src="img/_src/step-icon-2.png" alt="" class="steps__icon">
+						<p class="steps__text">Обмер <br> объекта</p>
+					</div>
+					<div class="steps__item">
+						<p class="steps__number">3 шаг</p>
+						<img src="img/_src/step-icon-3.png" alt="" class="steps__icon">
+						<p class="steps__text">Эскизный и рабочий проект</p>
+					</div>
+					<div class="steps__item">
+						<p class="steps__number">4 шаг</p>
+						<img src="img/_src/step-icon-4.png" alt="" class="steps__icon">
+						<p class="steps__text">Ремонт объекта</p>
+					</div>
+					<div class="steps__item">
+						<p class="steps__number">5 шаг</p>
+						<img src="img/_src/step-icon-5.png" alt="" class="steps__icon">
+						<p class="steps__text">Результат готов</p>
+					</div>
+					<div class="steps__item">
+						<p class="steps__number">6 шаг</p>
+						<p class="steps__link">Оставить заявку прямо сейчас</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="have-questions">
+			<div class="container have-questions__container">
+				<div class="have-questions__column"></div>
+				<div class="have-questions__column">
+					<div class="have-questions__content">
+						<p class="have-questions__title">Остались <span class="bold">вопросы?</span></p>
+						<p class="have-questions__text">Мы с радостью проконсультируем Вас и поможем подобрать идеальный для Вас ремонт</p>
+						<form action="#" class="form have-questions__form">
+							<label for="name" class="label name__icon"></label>
+							<input type="text" name="name" placeholder="Введите Ваше имя" class="input input_text have-questions__input">
+							<label for="tel" class="label phone__icon"></label>
+							<input type="tel" name="tel" placeholder="Введите Ваш телефон" class="input input_tel have-questions__input">
+							<button type="submit" class="button have-questions__button button_submit">Отправить</button>
+							<p class="personal-data-apply">Нажимая на кнопку, Вы даёте своё согласие на <a href="#" class="personal-data-apply__link">обработку персональных данных</a></p>
+						</form>
+					</div>
+					
+				</div>
+			</div>
+		</section>
+
+		<footer class="footer">
+			<div class="container footer__container">
+				<div class="row footer__row">
+					<div class="logo footer__logo">
+						<a href="index.html"><img src="img/_src/logo.png" alt="Ремтворец" class="logo__img"></a>
+					</div>
+
+					<nav class="menu footer__menu">
+						<a href="#" class="menu__item menu__item_m0">Калькулятор</a>
+						<a href="#" class="menu__item menu__item_m0">Гарантии</a>
+						<a href="#" class="menu__item menu__item_m0">Работы</a>
+						<a href="#" class="menu__item menu__item_m0">Тарифы</a>
+					</nav>
+
+					<p class="author">Разработка - Develio</p>
+
+					<div class="info footer__info">
+						<a href="#" class="info__phone footer__phone">+7 495 123-45-21</a>
+						<a href="#" class="info__get-price-link">Рассчитать стоимость</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+
 
 
 	</main>
 
-	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 	<script src="js/scripts.min.js"></script>
