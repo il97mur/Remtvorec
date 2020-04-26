@@ -2,8 +2,8 @@
 @import fonts
 @import libs
 
-// ::placeholder
-// 	color: #666
+::placeholder
+	color: #ccc
 
 ::selection
 	background-color: $accent
@@ -111,6 +111,13 @@ a
 	&:hover
 		text-decoration: none
 		filter: brightness(70%)
+
+.link
+	&:hover
+		color: #ffffff
+		filter: none
+	&:active
+		color: #ffffff
 p
 	padding: 0
 	margin: 0
@@ -191,20 +198,106 @@ h1,h2
 	&__text
 		text-shadow: 0px 0px 8px rgba(#53feb9, 0.4)
 		-webkit-background-clip: text !important
-     	-moz-background-clip: text
-        background-clip: text
+		-moz-background-clip: text
+		background-clip: text
 
 .input
 	width: 100%
 	font-size: 16px
-	color: rgba(0,0,0, .5)
+	// color: rgba(0,0,0, .5)
+	color: #333333
 	padding: 27px 35px 27px 80px
 	box-shadow: 0px 0px 10px 10px rgba(0,0,0, .04) inset
 	border-radius: $br
-	margin-bottom: 30px
 	font-weight: 300
 	&_tel
-		margin-top: -30px
+
+.label
+	position: relative
+	width: 100%
+	margin-bottom: 30px
+
+.disabled
+	opacity: 0.5
+
+// POPUP WINDOW
+
+.popup-wrap
+	position: fixed
+	width: 100vw
+	min-height: 100vh
+	height: fit-content
+	top: 0
+	left: 0
+	z-index: 1000
+	display: none
+	transition: display .5s ease
+	&__container
+		display: flex
+		justify-content: center
+		flex-wrap: wrap
+		position: relative
+
+.c-popup-wrap
+	position: fixed
+	width: 100%
+	height: 100%
+	background-color: rgba(#000, .83)
+	display: flex
+	justify-content: center
+	align-items: center
+	overflow-y: scroll
+
+.close
+	position: absolute
+	display: block
+	content: ''
+	width: 30px
+	height: 30px
+	top: -10px
+	right: -10%
+	z-index: 10
+	cursor: pointer
+	&::after
+		position: absolute
+		top: 0
+		left: 0
+		display: block
+		content: ''
+		width: 20px
+		height: 1px
+		background-color: #ffffff
+		transform: rotate(45deg)
+	&::before
+		position: absolute
+		top: 0
+		left: 0
+		display: block
+		content: ''
+		width: 20px
+		height: 1px
+		background-color: #ffffff
+		transform: rotate(-45deg)
+
+.popup
+	padding: 65px 80px 60px
+	background-color: #ffffff
+	border-radius: 20px
+	position: relative
+	z-index: 1001
+	width: 45%
+	display: flex
+	justify-content: center
+	flex-wrap: wrap
+	margin: 50px 10px
+	height: fit-content
+	&__h2
+		text-align: center
+		margin-bottom: 60px
+	&__button
+		width: 100%
+		margin-bottom: 35px
+		padding: 35px 35px
 
 .main-wrapper
 	width: 100%
@@ -213,10 +306,12 @@ h1,h2
 .main-screen
 	width: 100%
 	height: 1067px
-	background-image: url('../img/_src/main-screen-bg.jpg')
+	background-image: url('../img/_src/main-screen-bg.png')
 	background-repeat: no-repeat
+	background-size: cover
 	// background-size: 101% 101%
-	background-position: -6px -6px
+	// background-position: -6px -6px
+	background-position: center center
 	padding-top: 30px
 	display: flex
 	justify-content: center
@@ -283,8 +378,8 @@ h1,h2
 
 .look-project
 	position: absolute
-	left: 60%
-	top: 50%
+	left: 62%
+	top: 49%
 	display: flex
 	flex-direction: column
 	align-items: center
@@ -292,7 +387,8 @@ h1,h2
 		color: #ffffff
 		font-size: 16px
 		letter-spacing: 0.2mm
-		line-height: 10px
+		line-height: 20px
+		text-align: center
 	&__link
 		position: relative
 		font-size: 17px
@@ -319,7 +415,6 @@ h1,h2
 	&__menu
 	&__info
 
-
 .logo
 	&__title
 		color: #ffffff
@@ -333,7 +428,7 @@ h1,h2
 		left: 75px
 	&__link
 		&:hover
-			filter: none 
+			filter: none
 
 .work-all-day
 	font-size: 12px
@@ -370,7 +465,6 @@ h1,h2
 		&:hover
 			text-decoration: underline
 			color: #54b672
-
 
 .menu
 	margin-top: 15px
@@ -552,7 +646,7 @@ h1,h2
 		opacity: 0.5
 		transition: all .3s ease
 		background-color: #292d20
-		box-shadow: 0px -50px 50px 10px rgba(0, 0, 0, .6) inset
+		box-shadow: 0 -90px 50px 10px rgba(0,0,0,.6) inset
 		&:nth-child(2)
 			background-image: url('../img/_src/secondary-house.png')
 			background-position: -80px 60px
@@ -615,13 +709,6 @@ h1,h2
 			border-bottom-right-radius: $br
 			padding-left: 35px
 			position: relative
-			&::after
-				content: url('../img/_src/Drawing.png')
-				height: 304px
-				width: 100%
-				position: absolute
-				left: 0
-				bottom: -30px
 	&__button
 		padding: 30px 80px
 	&__heading
@@ -641,6 +728,17 @@ h1,h2
 		font-size: 22px
 		color: $green
 		font-weight: 600
+
+.draw
+	content: ''
+	background-image: url('../img/_src/Drawing.png')
+	background-size: contain
+	background-repeat: no-repeat
+	height: 304px
+	width: 100%
+	position: absolute
+	left: 0
+	bottom: -30px
 
 .type-of-repair
 	display: flex
@@ -694,8 +792,8 @@ h1,h2
 		justify-content: space-between
 	&__item
 		flex: 0 0 48.5%
-		padding: 40px 0px 40px 55px
-		height: 340px
+		padding: 40px 0 91px 55px
+		// height: 340px
 		position: relative
 		&:first-child
 			background-image: url('../img/_src/roller.png')
@@ -716,33 +814,37 @@ h1,h2
 		opacity: 0.5
 
 .name__icon
+	position: absolute
 	background-image: url('../img/_src/name-icon.png')
 	width: 22px
 	height: 22px
-	margin-bottom: -58px
-	margin-left: 35px
+	top: 50%
+	left: 30px
+	transform: translateY(-50%)
+	&_popup
+		background-image: url('../img/_src/popup-name-icon.png')
 
 .phone__icon
+	position: absolute
 	background-image: url('../img/_src/phone-icon.png')
 	width: 22px
 	height: 22px
-	margin-bottom: -31px
-	margin-left: 35px
+	top: 50%
+	left: 30px
+	transform: translateY(-50%)
+	&_popup
+		background-image: url('../img/_src/popup-phone-icon.png')
 
 .get-calculation
 	display: flex
 	justify-content: center
 	width: 100%
+	position: relative
 	&__card
 		padding: 50px 0px 40px 100px
 		transform: translateY(-50%)
 		position: relative
 		margin-bottom: -220px
-		&::after
-			content: url('../img/_src/form-bg.png')
-			position: absolute
-			top: -10px
-			right: -20px
 	&__content
 		width: 45%
 	&__h2
@@ -763,6 +865,25 @@ h1,h2
 		font-weight: 600
 	&__input
 
+.form-bg
+	content: url('../img/_src/form-bg.png')
+	position: absolute
+	top: -10px
+	right: -20px
+
+.spruce
+	position: absolute
+	display: block
+	content: ''
+	background-image: url('../img/_src/spruce.png')
+	background-repeat: no-repeat
+	// background-size: contain
+	height: 570px
+	width: 200px
+	top: 0
+	right: 0
+	// transform: translateY(870px)
+	transform: translateY(-50%)
 
 .personal-data-apply
 	font-size: 12px
@@ -779,6 +900,9 @@ h1,h2
 
 .calc-adventages-wrap
 	background-image: url('../img/_src/advantages-bg.png')
+	background-position: center center
+	background-repeat: no-repeat
+	background-size: cover
 	position: relative
 	padding-bottom: 240px
 	&::after
@@ -786,13 +910,14 @@ h1,h2
 		background-image: url('../img/_src/clouds.png')
 		display: block
 		content: ''
-		bottom: 0px
+		bottom: -5px
 		left: 0
 		width: 100%
 		height: 442px
 
 .advantages
 	width: 63%
+	position: relative
 	&__h1
 		margin-bottom: 120px
 	&__list
@@ -815,11 +940,25 @@ h1,h2
 		line-height: 30px
 		color: #000000
 		text-align: center
+	&__brick
+		top: 0
+		left: 0
+		transform: translate(-180%, -80%)
+
+.brick
+	position: absolute
+	content: ''
+	display: block
+	width: 160px
+	height: 105px
+	background-image: url('../img/_src/brick.png')
+	background-repeat: no-repeat
 
 .portfolio
 	display: flex
 	justify-content: center
 	width: 100%
+	position: relative
 	&__h1
 		margin-bottom: 40px
 		width: 50%
@@ -833,6 +972,34 @@ h1,h2
 	&__button
 		padding: 35px 65px
 		margin-left: 25px
+		// width: 100%
+	&__two-leaves
+		width: 175px
+		height: 100px
+		top: 20px
+		right: 10px
+
+.left-bush
+	position: absolute
+	content: ''
+	display: block
+	width: 325px
+	height: 700px
+	background-image: url('../img/_src/left-bush.png')
+	background-repeat: no-repeat
+	top: 0
+	left: 0
+	// transform: translate(0, 1400px)
+	transform: translate(0, -30%)
+
+.two-leaves
+	position: absolute
+	content: ''
+	display: block
+	background-image: url('../img/_src/two-leaves.png')
+	background-repeat: no-repeat
+
+	// transform: translate(0, -65%)
 
 .portfolio-item
 	border-radius: $br
@@ -867,16 +1034,17 @@ h1,h2
 	&__img
 		border-radius: $br
 		opacity: 0.5
+		align-self: flex-end
 		&_big
 			width: 100%
 			margin-bottom: 15px
 			opacity: 1
-			height: 340px
+			// height: 340px
 		&_preview
 			flex: 0 0 23%
 			width: 20% !important
 			border-radius: 10px
-			height: 75px
+			// height: 75px
 		&_active
 			opacity: 1
 	&__images-row
@@ -891,29 +1059,33 @@ h1,h2
 	&__paramethers
 		display: flex
 		justify-content: space-between
+		flex-wrap: wrap
 
 .portfolio-item-paramethers
-	display: flex
-	justify-content: space-between
-	align-items: center
+	// display: flex
+	// justify-content: space-between
+	// align-items: center
 	margin-bottom: 55px
 	&__row
 		display: flex
-		flex-wrap: wrap
+		justify-content: space-between
+		margin-bottom: 30px
 	&__column
 		flex: 0 0 40%
+		display: flex
+		align-items: center
 	&__type-column
+	&__value-column
+		font-size: 16px
+		color: #6e5555
+	&__type
+		// margin-bottom: 30px
 		font-size: 18px
 		line-height: 18px
 		font-weight: 500
 		color: #000000
-	&__value-column
-		font-size: 16px
-		color: #000000
-	&__type
-		margin-bottom: 30px
 	&__value
-		margin-bottom: 30px
+		// margin-bottom: 30px
 		opacity: 0.5
 		line-height: 18px
 		&_price
@@ -966,7 +1138,6 @@ h1,h2
 .portfolio-slider
 	width: 100vw
 	position: relative
-	
 
 .get-callback
 	width: 100%
@@ -974,7 +1145,11 @@ h1,h2
 	justify-content: center
 	padding-bottom: 250px
 	position: relative
-	&__container	
+	&__brick
+		transform: translate(50%, -50%)
+		top: 0
+		right: 0
+	&__container
 		display: flex
 		justify-content: center
 	&__column
@@ -983,11 +1158,6 @@ h1,h2
 		&:last-child
 			flex: 0 0 35%
 			position: relative
-			&::after
-				content: url('../img/_src/white-pen.png')
-				position: absolute
-				top: 0
-				right: -90%
 	&__card
 		padding: 55px 120px 25px 95px
 		box-shadow: 0px 0px 76px 10px rgba(#ccc, .25)
@@ -1026,6 +1196,31 @@ h1,h2
 		height: 440px
 		z-index: -1
 
+.pen
+	content:
+	background-image: url('../img/_src/white-pen.png')
+	background-repeat: no-repeat
+	background-size: contain
+	width: 170px
+	height: 170px
+	position: absolute
+	top: 20%
+	right: -70%
+
+.right-bush
+	position: absolute
+	content: ''
+	display: block
+	width: 210px
+	height: 620px
+	background-image: url('../img/_src/right-bush.png')
+	background-repeat: no-repeat
+	bottom: 0
+	right: 0
+	// transform: translate(0, 2100px)
+	transform: translate(0, 50%)
+	z-index: 100
+
 .tariffs
 	width: 100%
 	display: flex
@@ -1036,6 +1231,7 @@ h1,h2
 	position: relative
 	z-index: -2
 	padding-bottom: 150px
+	position: relative
 	&__container
 		display: flex
 		align-items: center
@@ -1057,7 +1253,28 @@ h1,h2
 		background-image: url('../img/_src/clouds-2.png')
 		width: 100%
 		height: 400px
-		z-index: -1
+		// z-index: -1
+	&__two-leaves
+		width: 215px
+		height: 144px
+		top: 0
+		right: 0
+		transform: translate(-30%, 1300px) rotate(225deg)
+		z-index: 100
+	&__leave
+
+.leave
+	position: absolute
+	content: ''
+	display: block
+	width: 70px
+	height: 90px
+	background-image: url('../img/_src/leave.png')
+	background-repeat: no-repeat
+	bottom: 0
+	left: 0
+	transform: translate(200%, -1000%) rotate(225deg)
+	z-index: 100
 
 .tariff-type-row
 	width: 66.666%
@@ -1200,6 +1417,7 @@ h1,h2
 	width: 100%
 	display: flex
 	justify-content: center
+	position: relative
 	&__container
 		display: flex
 		justify-content: center
@@ -1281,6 +1499,32 @@ h1,h2
 			color: #4db372
 			text-decoration: underline
 
+.two-bricks
+	position: absolute
+	content: ''
+	display: block
+	width: 250px
+	height: 250px
+	background-image: url('../img/_src/two-bricks.png')
+	background-repeat: no-repeat
+	top: 0
+	right: 0
+	// transform: translate(-20%, -1700px)
+	transform: translate(-20%, 50%)
+
+.stick
+	position: absolute
+	content: ''
+	display: block
+	width: 250px
+	height: 380px
+	background-image: url('../img/_src/stick.png')
+	background-repeat: no-repeat
+	top: 0
+	left: 0
+	// transform: translate(0, 3300px)
+	transform: translate(0, 50%)
+
 .have-questions
 	width: 100%
 	display: flex
@@ -1345,6 +1589,25 @@ h1,h2
 		padding: 27px 0px
 		width: 100%
 		margin-bottom: 35px
+	&__leave
+		&-1
+			transform: scale(1.2) translate(0%, -100%)
+		&-2
+			transform: scale(0.5) translate(1300px, -900%) rotate(100deg)
+		&-3
+			transform: scale(1.7) translate(900px, -500%) rotate(250deg)
+
+.wood
+	position: absolute
+	content: ''
+	display: block
+	width: 250px
+	height: 90%
+	background-image: url('../img/_src/wood.png')
+	background-repeat: no-repeat
+	top: 0
+	right: 0
+	transform: translate(100%, 20%)
 
 .footer
 	width: 100%
@@ -1378,5 +1641,9 @@ h1,h2
 	line-height: 25px
 	margin-top: 15px
 
-			
+.only-mobile
+	display: none
+.tablet
+	display: none
 
+@import media
