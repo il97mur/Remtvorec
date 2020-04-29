@@ -308,7 +308,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			$('.popup-wrap').fadeOut();
 		})
 
-		$('.info__get-callback-link').on('click', function(){
+		$('.j-open-popup').on('click', function(){
 			$('.popup-wrap').fadeIn();
 		});
 
@@ -325,49 +325,87 @@ document.addEventListener("DOMContentLoaded", function() {
 			servicesPrice = Math.round(price*0.6);
 			materialPrice = Math.round(price*0.4);
 
-			$('.j-services').text(servicesPrice + ' р.');
-			$('.j-materials').text(materialPrice + ' р.');
-			$('.valuation__result-value').text(price + ' р.');
+			$('.j-services').text(numberWithSpaces(servicesPrice) + ' р.');
+			$('.j-materials').text(numberWithSpaces(materialPrice) + ' р.');
+			$('.valuation__result-value').text(numberWithSpaces(price) + ' р.');
 
 			// $('.j-services')[0].value=$('.j-services')[0].value.replace(/[^\d]/g, '').replace(/\B(?=(?:\d{3})+(?!\d))/g, ' ');
 
 			function numberWithSpaces(x) {
 				return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 			  }
-
-			  numberWithSpaces($('.j-services').text());
 		};
-
-		// PARALLAX
-
-		// CUSTOM PARALLAX
-
-		// function customParallax(el){
-		// 	var howMuchScrolled = $(window).scrollTop();
- 		// 	var verticalScrollSpeed = howMuchScrolled / 4; // скорость вертикального скроллинга фона
-		// 	var horizontalScrollSpeed = howMuchScrolled / 40; // скорость горизонтального скроллинга фона
-			  
-		// 	var scrollDown = 0 + verticalScrollSpeed;
-
-		// 	var startPos = el.css('transform')
-
-		// 	el.css('transform', 'translateY(' + scrollDown + 'px)')
-		// };
-
-		// $(window).scroll(customParallax($('.parallax')));
 
 		$('.parallax').paroller();
 
-		$(window).scroll(parallaxScrollStart);
+		// $(window).scroll(parallaxScrollStart);
 
-		function parallaxScrollStart(){
-			var window_top = $(window).scrollTop();
-			$('.parallax').each(function(){
-				if (window_top > $(this).offset().top - 500) {
-					// alert($(this).attr('data-parallax-speed'));
-					$(this).attr('data-paroller-factor', '0.5');
-					// $(this).paroller();
+		// function parallaxScrollStart(){
+		// 	var window_top = $(window).scrollTop();
+		// 	$('.parallax').each(function(){
+		// 		if (window_top > $(this).offset().top - 500) {
+		// 			// alert($(this).attr('data-parallax-speed'));
+		// 			$(this).attr('data-paroller-factor', '0.5');
+		// 			// $(this).paroller();
+		// 		}
+		// 	})
+		// };
+
+		// Переключение тарифов
+
+		$('.tariff-content').hide();
+
+		if ($('.tariff__type_active').hasClass('j-new')) {
+			$('.j-new-tariffs').fadeIn();
+		} else if ($('.tariff__type_active').hasClass('j-sec')) {
+			$('.j-sec-tariffs').fadeIn();
+		} else if ($('.tariff__type_active').hasClass('j-build')) {
+			$('.j-build-tariffs').fadeIn();
+		}
+
+
+		$('.tariff__type').on('click', function(){
+			$('.tariff__type').removeClass('tariff__type_active');
+			$(this).addClass('tariff__type_active');
+			$('.tariff-content').hide();
+			if ($(this).hasClass('tariff__type_active')) {
+				if ($(this).hasClass('j-new')) {
+					$('.j-new-tariffs').fadeIn();
+				} else if ($(this).hasClass('j-sec')) {
+					$('.j-sec-tariffs').fadeIn();
+				} else if ($(this).hasClass('j-build')) {
+					$('.j-build-tariffs').fadeIn();
 				}
+				
+			}
+		});
+
+	// Параллакс для кустов и фона первого экрана
+
+	var width = document.body.clientWidth;
+	if (is_touch_device() == false) {
+		(function(){
+			var elem = $('.main-screen__bushes'),
+				startX = -100,
+				startY = -100,
+				w = document.documentElement.offsetWidth,
+				h = document.documentElement.offsetHeight;
+	
+				// Стартовые координаты фона
+				
+	
+				var stx = -(1920 - width)/2;
+		  
+			  $('body')[0].addEventListener('mousemove', function(evt){
+			  var posX = Math.round(evt.clientX / w * startX);
+			  var posY = Math.round(evt.clientY / h * startY);
+			  $('.main-screen__bushes')[0].style.backgroundPosition = posX + 'px ' + 0 + 'px';
+			  $('.main-screen')[0].style.backgroundPositionX = 'calc(50% + ' + posX * 0.3 + 'px)';
 			})
-		};
+		  })()
+	}
+
+	function is_touch_device() {
+		return !!('ontouchstart' in window);
+	  }
 });
