@@ -42,6 +42,8 @@ body, html
 	width: 50%
 .w-100
 	width: 100%
+.h-100
+	height: 100%
 
 // End standart classes
 
@@ -128,6 +130,60 @@ img
 h1,h2
 	padding: 0
 	margin: 0
+// PRELOADER
+
+.preloader-container
+	width: 100%
+	height: 100vh
+	background-color: #fff
+	display: flex
+	align-items: center
+	justify-content: center
+	position: fixed
+	top: 0
+	right: 0
+	left: 0
+	bottom: 0
+	z-index: 10000000000000000000
+
+.preloader
+	display: block
+	position: relative
+	width: 150px
+	height: 150px
+	margin: 30px auto
+	border-radius: 50%
+	border: 3px solid transparent
+	border-top-color: $green
+	animation: preloader-5-spin 2s linear infinite
+	&::before
+		content: ""
+		position: absolute
+		top: 5px
+		left: 5px
+		right: 5px
+		bottom: 5px
+		border-radius: 50%
+		border: 3px solid transparent
+		border-top-color: $green
+		animation: preloader-5-spin 3s linear infinite
+	&::after
+		content: ""
+		position: absolute
+		top: 15px
+		left: 15px
+		right: 15px
+		bottom: 15px
+		border-radius: 50%
+		border: 3px solid transparent
+		border-top-color: $green
+		animation: preloader-5-spin 1.5s linear infinite
+
+@keyframes preloader-5-spin
+	0%
+		transform: rotate(0deg)
+	100%
+		transform: rotate(360deg)
 
 // Common styles
 
@@ -550,19 +606,19 @@ h1,h2
 		justify-content: space-between
 
 .calculate
-        &__container
-            &_tight
-                width: 90%
-                position: relative
-                &::after
-                    position: absolute
-                    width: 100vw
-                    background: #120f0a
-                    content: ''
-                    display: block
-                    bottom: 0
-                    height: 200%
-                    z-index: -1
+	&__container
+		&_tight
+			width: 90%
+			position: relative
+			&::after
+				position: absolute
+				width: 100vw
+				background: #120f0a
+				content: ''
+				display: block
+				bottom: 0
+				height: 200%
+				z-index: -1
 
 .black-wrap
 	background: linear-gradient(180deg, #17120B, #000000)

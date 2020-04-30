@@ -409,3 +409,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		return !!('ontouchstart' in window);
 	  }
 });
+
+$(window).on('load', function(){
+	$('.preloader-container').fadeOut();
+});
