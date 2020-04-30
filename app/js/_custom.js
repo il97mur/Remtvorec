@@ -300,6 +300,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				if (!div.is(e.target) // если клик был не по нашему блоку
 					&& div.has(e.target).length === 0) { // и не по его дочерним элементам
 					$('.popup-wrap').fadeOut(); // скрываем его
+					$('.popup__form').attr('action', 'php/callback.php');
 				}
 			});
 		});
@@ -309,13 +310,16 @@ document.addEventListener("DOMContentLoaded", function() {
 		})
 
 		$('.j-open-popup').on('click', function(){
+			$('.popup__form').attr('action', 'php/callback.php');
 			$('.popup-wrap').fadeIn();
 		});
 
 		// Калькулятор
 
+		calculate();
+
 		function calculate(){
-			var area = $('.area-value').attr('value');
+			var area = $('#custom-handle').text();
 			var typeOfHouse = $('.type-of-house__item_active').attr('data-type-k');
 			var typeOfRepair = $('.type-of-repair__item_active').attr('data-price');
 
@@ -335,6 +339,25 @@ document.addEventListener("DOMContentLoaded", function() {
 				return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 			  }
 		};
+
+		// Передача данных расчета в форму заявки
+
+
+		$('.j-send-valuation').on('click', function(){
+			// Площадь
+			$('input[name="area-value"]').attr('value', $('#custom-handle').text());
+			$('input[name="type-of-house"]').attr('value', $('.type-of-house__item_active').attr('data-type-of-house'));
+			$('input[name="type-of-repair"]').attr('value', $('.type-of-repair__name_active').text());
+			$('input[name="repair-price"]').attr('value', $('.j-services').text());
+			$('input[name="material-price"]').attr('value', $('.j-materials').text());
+			$('input[name="result"]').attr('value', $('.valuation__result-value').text());
+
+			$('.popup__form').attr('action', 'php/valuation-send.php');
+			$('.popup-wrap').fadeIn();
+			
+		});
+
+
 
 		$('.parallax').paroller();
 

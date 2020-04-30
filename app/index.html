@@ -45,6 +45,13 @@
 							<i class="phone__icon phone__icon_popup"></i>
 							<input type="tel" name="tel" placeholder="Введите Ваш телефон" class="input input_tel popup__input">
 						</label>
+
+						<input type="text" name="area-value" hidden="hidden" value="start">
+						<input type="text" name="type-of-house" hidden="hidden" value="start">
+						<input type="text" name="type-of-repair" hidden="hidden" value="start">
+						<input type="text" name="repair-price" hidden="hidden" value="start">
+						<input type="text" name="material-price" hidden="hidden" value="start">
+						<input type="text" name="result" hidden="hidden" value="start">
 						
 						<button type="submit" class="button popup__button button_submit">Получить</button>
 						<p class="personal-data-apply">Нажимая на кнопку, Вы даёте своё согласие на <a href="#" class="personal-data-apply__link">обработку персональных данных</a></p>
@@ -125,9 +132,8 @@
 					<div class="c-area-slider">
 					<p class="area-slider-min area-slider__count">20 м2</p>
 						<div id="slider" class="j-slider area-slider" >
-							<div id="custom-handle" class="ui-slider-handle"></div>
+							<div id="custom-handle" class="ui-slider-handle">154</div>
 						</div>
-						<input style="z-index: 100;color: #ffffff;" hidden  class="area-value" value="154" type="text">
 					<p class="area-slider-max area-slider__count">200 м2</p>
 				</div>
 
@@ -138,7 +144,7 @@
 			<div class="black-wrap">
 
 				<div class="row calculate__row type-of-house container">
-					<div data-type-k="1" class="type-of-house__item type-of-house__item_active">
+					<div data-type-k="1" data-type-of-house="Новостройка" class="type-of-house__item type-of-house__item_active">
 						<div class="type-of-house__content">
 							<p class="type-of-house__name">Новостройка</p>
 							<div class="type-of-house__price">
@@ -146,7 +152,7 @@
 							</div>
 						</div>
 					</div>
-					<div data-type-k="1.2" class="type-of-house__item">
+					<div data-type-k="1.2" data-type-of-house="Вторичное жилье" class="type-of-house__item">
 						<div class="type-of-house__content">
 							<p class="type-of-house__name">Вторичное жилье</p>
 							<div class="type-of-house__price">
@@ -154,7 +160,7 @@
 							</div>
 						</div>
 					</div>
-					<div data-type-k="1.1" class="type-of-house__item">
+					<div data-type-k="1.1" data-type-of-house="Дом" class="type-of-house__item">
 						<div class="type-of-house__content">
 							<p class="type-of-house__name">Дом</p>
 							<div class="type-of-house__price">
@@ -162,7 +168,7 @@
 							</div>
 						</div>
 					</div>
-					<div data-type-k="1.3" class="type-of-house__item">
+					<div data-type-k="1.3" data-type-of-house="Таунхауз" class="type-of-house__item">
 						<div class="type-of-house__content">
 							<p class="type-of-house__name">Таунхауз</p>
 							<div class="type-of-house__price">
@@ -203,7 +209,7 @@
 								ELITE Косметический ремонт позволит обновить интерьер, добавить свежие "нотки", сделать дом более современным. Его проводят каждые 5-7 лет: убирают старые обои, испорченную плитку, линолеум или ламинат, меняют неисправную сантехнику, если это требуется, устанавливают/наносят новые покрытия. Косметическая отделка занимает несколько дней.
 							</div>
 
-							<button class="button valuation__button">Подробнее</button>
+							<button class="button valuation__button j-send-valuation">Отправить заявку</button>
 						</div>
 						<div class="valuation__column">
 
